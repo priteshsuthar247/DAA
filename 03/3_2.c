@@ -34,6 +34,7 @@ int main()
         {
             printf("Found %d\n",search);
             flag = 1;
+            break;
         }
         else if (array[mid]<search)
         {
