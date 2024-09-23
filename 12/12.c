@@ -70,6 +70,19 @@ void kruskalMST(int graph[MAX_V][MAX_V], int V)
     }
 }
 
+void printGraph(int graph[MAX_V][MAX_V], int V) 
+{
+    printf("Graph (Edges with Weights):\n");
+    for (int i = 0; i < V; i++) 
+    {
+        for (int j = i + 1; j < V; j++) 
+        {
+            if (graph[i][j] > 0)
+                printf("%d - %d: %d\n", i, j, graph[i][j]);
+        }
+    }
+}
+
 int main() 
 {
     srand(time(NULL));
@@ -89,6 +102,8 @@ int main()
         }
     }
 
+    printGraph(graph, V);
+    printf("\n");
     kruskalMST(graph, V);
     printf("\n");
     system("PAUSE");
